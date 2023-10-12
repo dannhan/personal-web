@@ -98,11 +98,57 @@ function Introduction() {
   );
 }
 
+function SkillView({ className }: { className?: string }) {
+  return (
+    <div
+      className={
+        'relative hidden min-h-screen flex-col items-center justify-center text-yellow-400 ' +
+        className
+      }
+    >
+      {/* <h1 className={'py-12 text-6xl text-indigo-400 ' + pixelify.className} ></h1> */}
+      <Marquee pauseOnHover={true} className='py-4'>
+        {icons.map((icon) => (
+          <div
+            key={icon}
+            className='mx-4 flex h-36 w-72 cursor-pointer items-center justify-center rounded-xl bg-[#1F1C2D] shadow-[0_0.5rem_1.125rem_-0.5rem_rgba(0,0,0,0.5)] transition-all hover:bg-indigo-700'
+          >
+            <Image
+              src={`/icons/${icon}.png`}
+              width={100}
+              height={100}
+              alt={icon}
+            />
+          </div>
+        ))}
+      </Marquee>
+      <Marquee pauseOnHover={true} direction='right' className='py-4'>
+        {icons.map((icon) => (
+          <div
+            key={icon}
+            className=' mx-4 flex h-36 w-72 cursor-pointer items-center justify-center rounded-xl bg-[#1F1C2D] shadow-[0_0.5rem_1.125rem_-0.5rem_rgba(0,0,0,0.5)] transition-all hover:bg-indigo-700'
+          >
+            <Image
+              src={`/icons/${icon}.png`}
+              width={100}
+              height={100}
+              alt={icon}
+            />
+          </div>
+        ))}
+      </Marquee>
+      <h1 className={'py-12 text-6xl ' + pixelify.className}>
+        🤑 PINJAM DULU SERATUS 🤑
+      </h1>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main>
       <div
-        className='mx-auto flex h-[calc(100vh-57px)] max-w-6xl items-center justify-between 
+        className='mx-auto flex h-[calc(100vh-57px)] max-w-6xl items-center justify-between px-8
         before:absolute before:left-0 before:top-0 before:-z-10 before:h-screen before:w-full before:bg-[url("hero-bg.svg")] before:bg-cover'
       >
         <div>
@@ -120,46 +166,11 @@ export default function Home() {
             width={400}
             height={400}
             alt='🌚'
-            className='drop-shadow-[11px_-9px_100px_#434158]'
+            className='hidden drop-shadow-[11px_-9px_100px_#434158] sm:block'
           />
         </motion.div>
       </div>
-      <div className='relative flex min-h-screen flex-col items-center justify-center text-yellow-400'>
-        {/* <h1 className={'py-12 text-6xl text-indigo-400 ' + pixelify.className} ></h1> */}
-        <Marquee pauseOnHover={true} className='py-4'>
-          {icons.map((icon) => (
-            <div
-              key={icon}
-              className='mx-4 flex h-36 w-72 cursor-pointer items-center justify-center rounded-xl bg-[#1F1C2D] shadow-[0_0.5rem_1.125rem_-0.5rem_rgba(0,0,0,0.5)] transition-all hover:bg-indigo-700'
-            >
-              <Image
-                src={`/icons/${icon}.png`}
-                width={100}
-                height={100}
-                alt={icon}
-              />
-            </div>
-          ))}
-        </Marquee>
-        <Marquee pauseOnHover={true} direction='right' className='py-4'>
-          {icons.map((icon) => (
-            <div
-              key={icon}
-              className=' mx-4 flex h-36 w-72 cursor-pointer items-center justify-center rounded-xl bg-[#1F1C2D] shadow-[0_0.5rem_1.125rem_-0.5rem_rgba(0,0,0,0.5)] transition-all hover:bg-indigo-700'
-            >
-              <Image
-                src={`/icons/${icon}.png`}
-                width={100}
-                height={100}
-                alt={icon}
-              />
-            </div>
-          ))}
-        </Marquee>
-        <h1 className={'py-12 text-6xl ' + pixelify.className}>
-          🤑 PINJAM DULU SERATUS 🤑
-        </h1>
-      </div>
+      <SkillView className='xl:flex' />
     </main>
   );
 }
