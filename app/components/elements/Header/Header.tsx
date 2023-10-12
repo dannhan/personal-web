@@ -12,29 +12,34 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className='flex justify-center border-b border-slate-400 bg-transparent'>
-      <nav className='mx-8 flex w-full max-w-6xl items-center justify-between'>
-        <ul className='flex gap-4'>
+    <header className='sticky top-0'>
+      <nav className='layout flex items-center justify-between py-4'>
+        <ul className='flex items-center gap-2 text-sm md:gap-4 md:text-base lg:text-lg'>
           {pages.map((page) => (
-            <li
-              key={page.name}
-              className={
-                'font-semibold transition-all duration-200 ease-in-out ' +
-                `${
-                  pathname == page.path
-                    ? 'bg-gradient-to-r from-cyan-600 to-indigo-700 bg-clip-text text-transparent'
-                    : ' hover:text-indigo-700 '
-                }`
-              }
-            >
-              <Link className='block py-4' href={page.path}>
-                {page.name}
+            <li key={page.name}>
+              <Link
+                className='py-2 font-medium transition-colors hover:text-indigo-700 focus:outline-none'
+                href={page.path}
+              >
+                <span className={pathname == page.path ? 'bg-gradient-to-tr from-cyan-700 to-indigo-700 bg-clip-text text-transparent transition-none' : ''}>
+                  {page.name}
+                </span>
               </Link>
             </li>
           ))}
         </ul>
-        <p>INPO LOGO GAIS</p>
+        <p>LOGO</p>
       </nav>
     </header>
   );
 }
+
+// key={page.name}
+// className={
+//   'font-semibold transition-all duration-200 ease-in-out ' +
+//   `${
+//     pathname == page.path
+//       ? 'bg-gradient-to-r from-cyan-600 to-indigo-700 bg-clip-text text-transparent'
+//       : ' hover:text-indigo-700 '
+//   }`
+// }
