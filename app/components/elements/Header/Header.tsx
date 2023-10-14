@@ -12,7 +12,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className='sticky top-0'>
+    <header className='transparent top-0 z-50'>
       <nav className='layout flex items-center justify-between py-4'>
         <ul className='flex items-center gap-2 text-sm md:gap-4 md:text-base lg:text-lg'>
           {pages.map((page) => (
@@ -21,7 +21,13 @@ export default function Header() {
                 className='py-2 font-medium transition-colors hover:text-indigo-700 focus:outline-none'
                 href={page.path}
               >
-                <span className={pathname == page.path ? 'bg-gradient-to-tr from-cyan-700 to-indigo-700 bg-clip-text text-transparent transition-none' : ''}>
+                <span
+                  className={
+                    pathname == page.path
+                      ? 'bg-gradient-to-tr from-cyan-700 to-indigo-700 bg-clip-text text-transparent transition-none'
+                      : ''
+                  }
+                >
                   {page.name}
                 </span>
               </Link>
