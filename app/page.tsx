@@ -102,7 +102,7 @@ function SkillView({ className }: { className?: string }) {
   return (
     <div
       className={
-        'relative flex min-h-screen flex-col items-center justify-center text-yellow-400 ' +
+        'relative flex min-h-screen flex-col items-center justify-center overflow-auto text-yellow-400 ' +
         className
       }
     >
@@ -111,19 +111,20 @@ function SkillView({ className }: { className?: string }) {
         {icons.map((icon) => (
           <div
             key={icon}
-            className='mx-4 flex h-16 w-32 cursor-pointer items-center justify-center rounded-xl bg-[#1F1C2D] shadow-[0_0.5rem_1.125rem_-0.5rem_rgba(0,0,0,0.5)] transition-all hover:bg-indigo-700'
+            className='mx-4 flex h-20 w-28 cursor-pointer items-center justify-center rounded-xl bg-[#1F1C2D] shadow-[0_0.5rem_1.125rem_-0.5rem_rgba(0,0,0,0.5)] transition-all hover:bg-indigo-700 md:h-28 md:w-52'
           >
             <Image
               src={`/icons/${icon}.png`}
-              width={40}
-              height={40}
+              width={50}
+              height={50}
               alt={icon}
+              // className='h-16'
             />
           </div>
         ))}
       </Marquee>
       <h1 className={'py-2 text-lg xl:py-12 xl:text-6xl ' + pixelify.className}>
-        🤑 PINJAM DULU SERATUS 🤑
+        LU ASIK BANG
       </h1>
     </div>
   );
