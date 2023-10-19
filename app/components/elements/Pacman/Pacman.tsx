@@ -1,4 +1,3 @@
-import Marquee from '../Marquee/Marquee';
 import styles from './Pacman.module.css';
 
 export default function Pacman() {
@@ -21,7 +20,6 @@ export default function Pacman() {
       </svg>
       {/* <div className={styles.feed}></div> */}
       <div className='absolute top-8'>
-        <Marquee />
       </div>
     </div>
   );
