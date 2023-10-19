@@ -51,6 +51,7 @@ function HelloWorld() {
             'Hello World',
             'مرحبا بالعالم',
             'こんにちは世界',
+          'anjay gaming',
             'Halo Dunia!',
           ].map((e) => (
             <li key={e} className='font-semibold'>
